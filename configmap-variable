@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  MY_ENV_VAR: "my-value"
+  ANOTHER_VAR: "another-value"
