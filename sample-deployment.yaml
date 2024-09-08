@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-deployment
+  name: new-deployment
   labels:
-    app: test-app
+    app: new-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-app
+      app: new-app
   template:
     metadata:
       labels:
-        app: test-app
+        app: new-app
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image:  quay.io/openshift-scale/nginx
         ports:
         - containerPort: 80
         env:
-        - name: EXAMPLE_ENV_VAR
-          value: "example-value"
+        - name: VAR
+          value: hello
